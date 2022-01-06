@@ -69,13 +69,13 @@ class ConnectionWrapper(object):
         self.handle.close()
 
     def commit(self):
-        self.handle.commit()
+        pass
 
     def rollback(self):
-        self.handle.rollback()
+        pass
 
     def start_transaction(self):
-        self.handle.start_transaction()
+        pass
 
     def fetchall(self):
         if self._cursor is None:
@@ -139,14 +139,10 @@ class PrestoConnectionManager(SQLConnectionManager):
             raise dbt.exceptions.RuntimeException(str(exc))
 
     def add_begin_query(self):
-        connection = self.get_thread_connection()
-        with self.exception_handler('handle.start_transaction()'):
-            connection.handle.start_transaction()
+        pass
 
     def add_commit_query(self):
-        connection = self.get_thread_connection()
-        with self.exception_handler('handle.commit()'):
-            connection.handle.commit()
+        pass
 
     @classmethod
     def open(cls, connection):

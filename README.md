@@ -1,3 +1,10 @@
+**This is a fork of the offical repo. The offcial dbt-presto plugin causes a problem when presto tries to drop or rename a table (S3 folder does not get cleared). We suspect that this could be due to the use of transasctions by the plugin. Hence this fork removes the transactional logic to see (yet to be confirmed) if it works. In doing so, we also make this akin to how the dbt-trino plugin is configured**
+
+##Migration plan
+* If this works, upgrade to dbt-trino 1.0.1 (i.e. when they release this fix - https://github.com/starburstdata/dbt-trino/commit/974c5e2beb285db0994da63b8031864dafca7c14)
+
+---
+
 ## dbt-presto
 
 ### Documentation

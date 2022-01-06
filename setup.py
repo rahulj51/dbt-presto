@@ -8,7 +8,7 @@ with open(os.path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 
-package_name = "dbt-presto"
+package_name = "dbt-presto-modified"
 
 
 # get this from a separate file
